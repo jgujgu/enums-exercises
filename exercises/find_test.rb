@@ -15,50 +15,44 @@ class FindTest < Minitest::Test
   def test_no_waldo
     words = ["scarf", "sandcastle", "flag", "pretzel", "crow", "key"]
     found = words.find do |word|
-      # Your code goes here
+      word == "waldo"
     end
     assert_equal nil, found
   end
 
   def test_find_waldo
-    skip
     words = ["noise", "dog", "fair", "house", "waldo", "bucket", "fish"]
-    # Your code goes here
+    found = words.find {|x| x == "waldo"}
     assert_equal "waldo", found
   end
 
   def test_cannot_find_3_letter_words
-    skip
     words = ["piglet", "porridge", "bear", "blueberry"]
-    # Your code goes here
+    found = words.find {|x| x.length == 3}
     assert_equal nil, found
   end
 
   def test_find_13
-    skip
     numbers = [2, 13, 19, 8, 3, 27]
-    # Your code goes here
+    found = numbers.find {|x| x == 13}
     assert_equal 13, found
   end
 
   def test_find_first_even_number
-    skip
     numbers = [3, 7, 13, 11, 10, 2, 17]
-    # Your code goes here
+    found = numbers.find {|x| x%2 == 0}
     assert_equal 10, found
   end
 
   def test_find_first_multiple_of_3
-    skip
     numbers = [2, 8, 9, 27, 24, 5]
-    # Your code goes here
+    found = numbers.find {|x| x%3 == 0}
     assert_equal 9, found
   end
 
   def test_find_first_word_starting_with_q
-    skip
     words = ["weirdo", "quill", "fast", "quaint", "quitter", "koala"]
-    # Your code goes here
+    found = words.find {|x| x[0] == "q"}
     assert_equal "quill", found
   end
 

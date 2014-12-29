@@ -17,51 +17,48 @@ class MapPatternTest < Minitest::Test
     numbers = [1, 2, 3, 4, 5]
     doubles = []
     numbers.each do |number|
-      # Your code goes here
+      doubles << number * 2
     end
     assert_equal [2, 4, 6, 8, 10], doubles
   end
 
   def test_squares
-    skip
     numbers = [1, 2, 3, 4, 5]
     squares = []
-    # Your code goes here
+    numbers.each {|x| squares << x ** 2}
     assert_equal [1, 4, 9, 16, 25], squares
   end
 
   def test_lengths
-    skip
     names = ["alice", "bob", "charlie", "david", "eve"]
-    # Your code goes here
+    lengths = []
+    names.each {|x| lengths << x.length}
     assert_equal [5, 3, 7, 5, 3], lengths
   end
 
   def test_normalize_zip_codes
-    skip
     numbers = [234, 10, 9119, 38881]
-    # Your code goes here
+    zip_codes = []
+    numbers.each {|x| zip_codes << x.to_s.rjust(5,'0')}
     assert_equal ["00234", "00010", "09119", "38881"], zip_codes
   end
 
   def test_backwards
-    skip
     names = ["alice", "bob", "charlie", "david", "eve"]
-    # Your code goes here
+    backwards = []
+    names.each {|x| backwards << x.reverse}
     assert_equal ["ecila", "bob", "eilrahc", "divad", "eve"], backwards
   end
 
   def test_words_with_no_vowels
-    skip
     words = ["green", "sheep", "travel", "least", "boat"]
-    # Your code goes here
+    without_vowels = words.map {|x| x.tr("aeiou","")}
     assert_equal ["grn", "shp", "trvl", "lst", "bt"], without_vowels
   end
 
   def test_trim_last_letter
-    skip
     animals = ["dog", "cat", "mouse", "frog", "platypus"]
-    # Your code goes here
+    trimmed = animals.map {|x| x[0...(x.length-1)]}  
     assert_equal ["do", "ca", "mous", "fro", "platypu"], trimmed
   end
 
